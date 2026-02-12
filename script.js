@@ -1,9 +1,4 @@
 const { jsPDF } = window.jspdf;
-Množství: ${order.quantity || 0}<br>
-Cena/kus: ${order.price || 0}<br>
-Celkem: ${total} Kč<br>
-<button onclick="deleteOrder(${index})">Smazat</button>
-`;
 
 
 ordersList.appendChild(div);
@@ -66,7 +61,7 @@ doc.save("objednavky.pdf");
 });
 
 
-// Nastavení názvu a loga
+// Změna názvu a loga
 
 
 titleInput.addEventListener("input", () => {
@@ -75,7 +70,9 @@ appTitle.textContent = titleInput.value || "Evidence objednávek";
 
 
 logoInput.addEventListener("input", () => {
-logoPreview.src = logoInput.value || logoPreview.src;
+if (logoInput.value.trim() !== "") {
+logoPreview.src = logoInput.value;
+}
 });
 
 
