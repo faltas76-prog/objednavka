@@ -1,28 +1,4 @@
-const form = document.getElementById("orderForm");
-const ordersList = document.getElementById("ordersList");
-const titleInput = document.getElementById("titleInput");
-const logoInput = document.getElementById("logoInput");
-const appTitle = document.getElementById("appTitle");
-const logoPreview = document.getElementById("logoPreview");
-
-
-let orders = JSON.parse(localStorage.getItem("orders_db")) || [];
-
-
-function saveOrders() {
-localStorage.setItem("orders_db", JSON.stringify(orders));
-}
-
-
-function renderOrders() {
-ordersList.innerHTML = "";
-
-
-orders.forEach((order, index) => {
-const total = (order.quantity || 0) * (order.price || 0);
-
-
-const div = document.createElement("div");
+const { jsPDF } = window.jspdf;
 div.className = "order-card";
 div.innerHTML = `
 <strong>${order.customer}</strong><br>
@@ -63,6 +39,36 @@ saveOrders();
 renderOrders();
 form.reset();
 });
+
+
+// Export PDF
+function exportPDF() {
+const doc = new jsPDF();
+
+
+doc.text("Seznam objednávek", 10, 10);
+
+
+let y = 20;
+orders.forEach((order, index) => {
+const total = (order.quantity || 0) * (order.price || 0);
+
+
+doc.text(`${index + 1}. ${order.customer} - ${order.product}`, 10, y);
+y += 7;
+doc.text(`Množství: ${order.quantity} | Cena: ${order.price} | Celkem: ${total} Kč`, 10, y);
+y += 10;
+
+
+if (y > 270) {
+doc.addPage();
+y = 10;
+}
+});
+
+
+doc.save("objednavky.pdf");
+}
 
 
 // Nastavení názvu a loga
