@@ -1,58 +1,53 @@
 <!DOCTYPE html>
-<title>Evidence objednávek</title>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evidence objednávek</title>
 
+  <link rel="stylesheet" href="style.css" />
 
-<link rel="stylesheet" href="style.css" />
-
-
-<!-- Stabilní jsPDF verze -->
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <!-- Knihovna jsPDF (funguje) -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
 
+  <div class="container">
 
-<div class="container">
+    <div class="header">
+      <img id="logoPreview" src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="logo">
+      <h1 id="appTitle">Evidence objednávek</h1>
+    </div>
 
+    <div class="settings">
+      <input type="text" id="titleInput" placeholder="Změnit název aplikace">
+      <input type="text" id="logoInput" placeholder="URL nového loga">
+    </div>
 
-<div class="header">
-<img id="logoPreview" src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="logo">
-<h1 id="appTitle">Evidence objednávek</h1>
-</div>
+    <div class="form-section">
+      <h2>Nová objednávka</h2>
+      <form id="orderForm">
+        <input type="text" name="customer" placeholder="Jméno zákazníka *" required>
+        <input type="text" name="email" placeholder="Email">
+        <input type="text" name="phone" placeholder="Telefon">
+        <input type="text" name="product" placeholder="Produkt *" required>
+        <input type="number" name="quantity" placeholder="Množství">
+        <input type="number" name="price" placeholder="Cena za kus *" required>
+        <textarea name="note" placeholder="Poznámka"></textarea>
+        <button type="submit">Uložit objednávku</button>
+      </form>
+    </div>
 
+    <div class="orders-section">
+      <div class="orders-header">
+        <h2>Seznam objednávek</h2>
+        <button id="pdfBtn">Export do PDF</button>
+      </div>
+      <div id="ordersList"></div>
+    </div>
 
-<div class="settings">
-<input type="text" id="titleInput" placeholder="Změnit název aplikace">
-<input type="text" id="logoInput" placeholder="URL nového loga">
-</div>
+  </div>
 
-
-<div class="form-section">
-<h2>Nová objednávka</h2>
-<form id="orderForm">
-<input type="text" name="customer" placeholder="Jméno zákazníka *" required>
-<input type="text" name="email" placeholder="Email">
-<input type="text" name="phone" placeholder="Telefon">
-<input type="text" name="product" placeholder="Produkt *" required>
-<input type="number" name="quantity" placeholder="Množství">
-<input type="number" name="price" placeholder="Cena za kus *" required>
-<textarea name="note" placeholder="Poznámka"></textarea>
-<button type="submit">Uložit objednávku</button>
-</form>
-</div>
-
-
-<div class="orders-section">
-<div class="orders-header">
-<h2>Seznam objednávek</h2>
-<button id="pdfBtn">Export do PDF</button>
-</div>
-<div id="ordersList"></div>
-</div>
-
-
-</div>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
