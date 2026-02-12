@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="cs">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Evidence objednávek</title>
+
+
 <link rel="stylesheet" href="style.css" />
 
 
-<!-- jsPDF CDN pro export -->
+<!-- jsPDF knihovna -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
@@ -17,7 +18,7 @@
 
 
 <div class="header">
-<img id="logoPreview" src="https://cdn-icons-png.flaticon.com/512/891/891462.png" />
+<img id="logoPreview" src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="logo" />
 <h1 id="appTitle">Evidence objednávek</h1>
 </div>
 
@@ -46,7 +47,7 @@
 <div class="orders-section">
 <div class="orders-header">
 <h2>Seznam objednávek</h2>
-<button onclick="exportPDF()">Export do PDF</button>
+<button id="pdfBtn">Export do PDF</button>
 </div>
 <div id="ordersList"></div>
 </div>
