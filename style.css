@@ -1,4 +1,18 @@
 body {
+form textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+
+button {
+padding: 8px 14px;
+background: #007bff;
+color: white;
+border: none;
 border-radius: 6px;
 cursor: pointer;
 }
@@ -19,23 +33,19 @@ flex-wrap: wrap;
 
 .order-card {
 background: #f9f9f9;
-padding: 15px;
-margin-top: 15px;
+padding: 12px;
+margin-top: 12px;
 border-radius: 8px;
 }
 
 
 .order-card button {
 background: red;
-margin-top: 10px;
+margin-top: 8px;
 }
 
 
-/* ===============================
-📱 MOBIL
-=============================== */
-
-
+/* 📱 Mobil */
 @media (max-width: 768px) {
 .header {
 flex-direction: column;
@@ -46,17 +56,5 @@ text-align: center;
 .orders-header {
 flex-direction: column;
 gap: 10px;
-}
-}
-
-
-/* ===============================
-💻 TABLET
-=============================== */
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-.container {
-padding: 15px;
 }
 }
