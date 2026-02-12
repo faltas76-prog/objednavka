@@ -1,4 +1,5 @@
 const { jsPDF } = window.jspdf;
+const div = document.createElement("div");
 div.className = "order-card";
 div.innerHTML = `
 <strong>${order.customer}</strong><br>
@@ -41,22 +42,21 @@ form.reset();
 });
 
 
-// Export PDF
-function exportPDF() {
+pdfBtn.addEventListener("click", () => {
 const doc = new jsPDF();
-
-
 doc.text("Seznam objednávek", 10, 10);
 
 
 let y = 20;
-orders.forEach((order, index) => {
+
+
+orders.forEach((order, i) => {
 const total = (order.quantity || 0) * (order.price || 0);
 
 
-doc.text(`${index + 1}. ${order.customer} - ${order.product}`, 10, y);
+doc.text(`${i + 1}. ${order.customer} - ${order.product}`, 10, y);
 y += 7;
-doc.text(`Množství: ${order.quantity} | Cena: ${order.price} | Celkem: ${total} Kč`, 10, y);
+doc.text(`Množství: ${order.quantity} Cena: ${order.price} Celkem: ${total} Kč`, 10, y);
 y += 10;
 
 
@@ -68,19 +68,19 @@ y = 10;
 
 
 doc.save("objednavky.pdf");
-}
+});
 
 
 // Nastavení názvu a loga
 
 
 titleInput.addEventListener("input", () => {
-appTitle.textContent = titleInput.value;
+appTitle.textContent = titleInput.value || "Evidence objednávek";
 });
 
 
 logoInput.addEventListener("input", () => {
-logoPreview.src = logoInput.value;
+logoPreview.src = logoInput.value || logoPreview.src;
 });
 
 
