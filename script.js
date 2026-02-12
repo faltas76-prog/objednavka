@@ -1,9 +1,4 @@
 const { jsPDF } = window.jspdf;
-const div = document.createElement("div");
-div.className = "order-card";
-div.innerHTML = `
-<strong>${order.customer}</strong><br>
-Produkt: ${order.product}<br>
 Množství: ${order.quantity || 0}<br>
 Cena/kus: ${order.price || 0}<br>
 Celkem: ${total} Kč<br>
