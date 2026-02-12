@@ -1,23 +1,4 @@
 body {
-}
-
-
-.form-section,
-.orders-section {
-background: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-margin-bottom: 20px;
-}
-
-
-form input,
-form textarea {
-width: 100%;
-padding: 10px;
-margin-bottom: 10px;
-border: 1px solid #ccc;
 border-radius: 6px;
 }
 
@@ -35,13 +16,6 @@ cursor: pointer;
 button:hover {
 background: #0056b3;
 }
-.header img {
-  width: 28px;
-  height: 28px;
-  max-width: 28px;
-  max-height: 28px;
-  object-fit: contain;
-}
 
 
 .orders-header {
@@ -56,7 +30,7 @@ flex-wrap: wrap;
 background: #f9f9f9;
 padding: 12px;
 margin-top: 12px;
-border-radius: 8px;
+border-radius: 6px;
 }
 
 
@@ -66,7 +40,6 @@ margin-top: 8px;
 }
 
 
-/* 📱 Mobil */
 @media (max-width: 768px) {
 .header {
 flex-direction: column;
