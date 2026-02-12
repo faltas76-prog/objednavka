@@ -1,4 +1,17 @@
 body {
+}
+
+
+.form-section,
+.orders-section {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+margin-bottom: 20px;
+}
+
+
 form input,
 form textarea {
 width: 100%;
