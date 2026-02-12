@@ -1,0 +1,62 @@
+body {
+
+
+.header {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+
+.header img {
+width: 60px;
+height: 60px;
+}
+
+
+.settings input {
+width: 48%;
+padding: 8px;
+margin-bottom: 10px;
+}
+
+
+form input,
+form textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+
+button {
+padding: 10px 15px;
+background: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+
+button:hover {
+background: #0056b3;
+}
+
+
+.order-card {
+background: white;
+padding: 15px;
+margin-bottom: 15px;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.order-card button {
+background: red;
+margin-top: 10px;
+}
