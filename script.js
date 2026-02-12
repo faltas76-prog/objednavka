@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const newOrder = Object.fromEntries(formData.entries());
+    const fd = new FormData(form);
+    const newOrder = Object.fromEntries(fd.entries());
 
     newOrder.quantity = Number(newOrder.quantity);
     newOrder.price = Number(newOrder.price);
@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   pdfBtn.addEventListener("click", function () {
-
     if (!window.jspdf) {
       alert("PDF knihovna se nenačetla.");
       return;
